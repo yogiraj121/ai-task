@@ -40,16 +40,8 @@ app.use(cookieParser());
 app.use(useragent.express());
 
 // CORS Configuration
-const corsOptions = {
-  origin: [
-    'http://localhost:3000',
-    'http://localhost:5173',
-    'http://localhost:5174'
-  ],
-  credentials: true,
-  optionsSuccessStatus: 200 // For legacy browser support
-};
-app.use(cors(corsOptions));
+
+app.use(cors());
 
 // Routes
 app.use("/api/auth", authRoutes);
